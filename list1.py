@@ -5,7 +5,7 @@ Kenzie assignment: List1
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "Mavrick Watts assisted by coach David R"
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -26,24 +26,34 @@ __author__ = "???"
 
 
 def match_ends(words):
-    # your code here
-    return
-
+    count = 0
+    for word in words:
+        if len(word) >= 2 and word[0] == word[-1]:
+            count += 1
+    return count
 
 # B. front_x
 # Given a list of strings, return a list with the strings in
 # sorted order, except group all the strings that begin with
 # 'x' first.
+
 # Example:
 #   ['mix', 'xyz', 'apple', 'xanadu', 'aardvark'] yields
 #   ['xanadu', 'xyz', 'aardvark', 'apple', 'mix']
+
 # Hint: this can be done by making 2 lists and sorting each
 # of them before combining them.
-
-
 def front_x(words):
-    # your code here
-    return
+    list = []
+    x_list = []
+    for word in words:
+        if word[0] == 'x':
+            x_list.append(word)
+        else:
+            list.append(word)
+    list.sort()
+    x_list.sort()
+    return x_list+list
 
 
 # C. sort_last
@@ -58,6 +68,10 @@ def front_x(words):
 def sort_last(tuples):
     # your code here
     return
+
+
+
+    
 
 
 # Provided simple test() function used in main() to print
