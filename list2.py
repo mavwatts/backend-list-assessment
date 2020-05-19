@@ -19,33 +19,45 @@ __author__ = "Mavrick Watts"
 # placeholder for your code.
 
 # D. remove_adjacent
-# Given a list of numbers, return a list where all adjacent
-# equal elements have been reduced to a single element.
+# Given a list of numbers, return a list where all adjacent equal elements have been reduced to a single element.
+
 # Example:
 #   [1, 2, 2, 3] -> [1, 2, 3]
+
 # You may create a new list or modify the passed in list.
 # Hint: Don't use set()
 
-
 def remove_adjacent(nums):
-    # your code here
-    return
+    nums_list = []
+    for number in nums:
+        if nums_list:
+            if nums_list[-1] != number:
+                nums_list.append(number)
+        else:
+            nums_list.append(number)
+    return nums_list
 
 
 # E. linear_merge
-# Given two lists sorted in increasing order, create and
-# return a merged list of all the elements in sorted order.
+# Given two lists sorted in increasing order, create and return a merged list of all the elements in sorted order.
 # You may modify the passed in lists.
-# The solution should work in "linear" time, making a single
-# pass of both lists.
-# Hint: Don't use `sort` or `sorted` -- they are not O(n)
-# linear time and the two lists are already provided in
+# The solution should work in "linear" time, making a single pass of both lists.
+# list_1 = [1, 2, 3, 4, 5] 
+# list_2 = [6, 7, 8, 9, 0]
+### Hint: Don't use `sort` or `sorted` -- they are not O(n) linear time and the two lists are already provided in
 # ascending sorted order.
 
 
 def linear_merge(list1, list2):
-    # your code here
-    return
+    results = []
+    while len(list1) and len(list2):
+        if list1[0] < list2[0]:
+            results.append(list1.pop(0))
+        else:
+            results.append(list2.pop(0))
+    results.extend(list1)
+    results.extend(list2)
+    return results
 
 
 # Provided simple test() function used in main() to print
